@@ -5,7 +5,10 @@
   "server": [
     "PlayerMovementMixin",
     "InteractionDistanceMixin$InteractionDistanceMixin1",
-    "InteractionDistanceMixin$InteractionDistanceMixin2"
+    "InteractionDistanceMixin$InteractionDistanceMixin2",
+    "CreativeModeItemBehaviorMixin$CreativeModeItemBehaviorMixin1",
+    "CreativeModeItemBehaviorMixin$CreativeModeItemBehaviorMixin2",
+    "CreativeModeItemBehaviorMixin$CreativeModeItemBehaviorMixin3"
   ],
   "injectors": {
     "defaultRequire": 1
