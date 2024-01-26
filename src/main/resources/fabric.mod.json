@@ -14,7 +14,9 @@
     ]
   },
   "mixins": [
-    "fountain.mixins.json"
+    "fountain.mixins.earthmode.json",
+    "fountain.mixins.itembehavior.json",
+    "fountain.mixins.movement.json"
   ],
   "depends": {
     "fabricloader": ">=0.15.0",

@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "micheal65536.fountain.fabric.earthmode.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "server": [
+    "ServerPlayerEntityMixin",
+    "ServerPlayerInteractionManagerMixin",
+    "ServerPlayerInteractionManagerMixin$ServerPlayerInteractionManagerAccessor",
+    "ServerPlayNetworkHandlerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

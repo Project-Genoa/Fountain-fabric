@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "micheal65536.fountain.fabric.movement.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "server": [
+    "ServerPlayNetworkHandlerMixin",
+    "ServerPlayNetworkHandlerMixin$ServerPlayNetworkHandlerAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
