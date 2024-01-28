@@ -2,13 +2,13 @@ package micheal65536.fountain.fabric.itembehavior;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 
 import micheal65536.fountain.fabric.earthmode.EarthModePlayer;
 
 public class EarthItemPickup
 {
-	public static void giveItemToEarthPlayer(ServerPlayerEntity player, ItemStack itemStack, BlockPos pos)
+	public static void giveItemToEarthPlayer(ServerPlayerEntity player, ItemStack itemStack, Vec3d pos)
 	{
 		if (!((EarthModePlayer) player).isEarthMode())
 		{
