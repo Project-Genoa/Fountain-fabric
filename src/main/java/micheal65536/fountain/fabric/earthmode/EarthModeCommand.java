@@ -8,6 +8,8 @@ import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 
+import micheal65536.fountain.fabric.itembehavior.EarthBlockBreakingServerPlayerInteractionManager;
+
 public class EarthModeCommand
 {
 	public static final CommandRegistrationCallback COMMAND_REGISTRATION_CALLBACK = (dispatcher, registryAccess, environment) ->
@@ -38,6 +40,7 @@ public class EarthModeCommand
 											ServerPlayerEntity serverPlayerEntity = EntityArgumentType.getPlayer(context, "player");
 											boolean earthMode = BoolArgumentType.getBool(context, "enabled");
 											((EarthModePlayer) serverPlayerEntity).setEarthMode(earthMode);
+											((EarthBlockBreakingServerPlayerInteractionManager) serverPlayerEntity.interactionManager).resetBlockBreaking();
 											((EarthModePlayer) serverPlayerEntity).applyAbilitiesForEarthMode();
 											serverPlayerEntity.sendAbilitiesUpdate();
 											if (earthMode)

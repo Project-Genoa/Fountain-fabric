@@ -5,6 +5,10 @@
   "server": [
     "BucketItemMixin",
     "BucketItemMixin$ItemAccessor",
+    "BlockBreaking$ServerPlayerInteractionManagerMixin",
+    "BlockBreaking$ServerPlayerInteractionManagerAccessor",
+    "BlockBreaking$PlayerEntityMixin",
+    "BlockBreaking$ServerWorldMixin",
     "UsePlayerAbilitiesMixin"
   ],
   "injectors": {
