@@ -9,6 +9,7 @@
     "BlockBreaking$ServerPlayerInteractionManagerAccessor",
     "BlockBreaking$PlayerEntityMixin",
     "BlockBreaking$ServerWorldMixin",
+    "InteractionDistanceMixin",
     "UsePlayerAbilitiesMixin"
   ],
   "injectors": {
