@@ -2,13 +2,10 @@ package micheal65536.fountain.fabric.itembehavior.mixins;
 
 import net.minecraft.block.AbstractSignBlock;
 import net.minecraft.block.BarrierBlock;
-import net.minecraft.block.BedBlock;
 import net.minecraft.block.BeehiveBlock;
 import net.minecraft.block.CakeBlock;
 import net.minecraft.block.DecoratedPotBlock;
-import net.minecraft.block.DoorBlock;
 import net.minecraft.block.ShulkerBoxBlock;
-import net.minecraft.block.TallPlantBlock;
 import net.minecraft.block.TntBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.PowderSnowBucketItem;
@@ -24,14 +21,11 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin({
 		AbstractSignBlock.class,
 		BarrierBlock.class,
-		BedBlock.class,
 		BeehiveBlock.class,
 		CakeBlock.class,
 		//ChiseledBookshelfBlock.class,
 		DecoratedPotBlock.class,
-		DoorBlock.class,
 		ShulkerBoxBlock.class,
-		TallPlantBlock.class,
 		TntBlock.class,
 		PowderSnowBucketItem.class,
 		SwordItem.class,

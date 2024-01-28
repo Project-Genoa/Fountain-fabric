@@ -9,6 +9,11 @@
     "BlockBreaking$ServerPlayerInteractionManagerAccessor",
     "BlockBreaking$PlayerEntityMixin",
     "BlockBreaking$ServerWorldMixin",
+    "BlockDrops$ServerPlayerInteractionManagerMixin",
+    "BlockDrops$BlockMixin",
+    "BlockDrops$ServerPlayerInteractionManagerAccessor",
+    "InteractBlockConsumeItemMixin",
+    "InteractBlockConsumeItemMixin$ServerPlayerInteractionManagerAccessor",
     "InteractionDistanceMixin",
     "UsePlayerAbilitiesMixin"
   ],
