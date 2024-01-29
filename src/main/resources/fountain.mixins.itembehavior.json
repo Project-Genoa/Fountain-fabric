@@ -13,6 +13,8 @@
     "BlockDrops$BlockMixin",
     "BlockDrops$ServerPlayerInteractionManagerAccessor",
     "EntityPickupMixin",
+    "InstantItemUseMixin",
+    "InstantItemUseMixin$LivingEntityAccessor",
     "InteractBlockConsumeItemMixin",
     "InteractBlockConsumeItemMixin$ServerPlayerInteractionManagerAccessor",
     "InteractionDistanceMixin",
