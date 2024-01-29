@@ -16,6 +16,7 @@
     "InteractBlockConsumeItemMixin",
     "InteractBlockConsumeItemMixin$ServerPlayerInteractionManagerAccessor",
     "InteractionDistanceMixin",
+    "ItemPickupMixin",
     "UsePlayerAbilitiesMixin"
   ],
   "injectors": {
