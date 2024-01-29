@@ -203,7 +203,7 @@ public class BlockBreaking
 	{
 		// always send block breaking to Earth players even if it's their own block break
 		@Redirect(method = "setBlockBreakingInfo(ILnet/minecraft/util/math/BlockPos;I)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/network/ServerPlayerEntity;getId()I"))
-		private int getId(ServerPlayerEntity serverPlayerEntity, @Local(name = "entityId") int entityId)
+		private int getId(ServerPlayerEntity serverPlayerEntity, @Local(ordinal = 0) int entityId)
 		{
 			if (((EarthModePlayer) serverPlayerEntity).isEarthMode())
 			{

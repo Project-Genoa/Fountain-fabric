@@ -28,7 +28,7 @@ public class BlockDrops
 	public static class ServerPlayerInteractionManagerMixin
 	{
 		@Inject(method = "tryBreakBlock(Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/network/ServerPlayerInteractionManager;isCreative()Z"), cancellable = true)
-		private void tryBreakBlockEarthMode(CallbackInfoReturnable<Boolean> callbackInfo, @Local(name = "pos") BlockPos pos, @Local(name = "block") Block block, @Local(name = "blockState2") BlockState blockState, @Local(name = "blockEntity") BlockEntity blockEntity, @Local(name = "bl") boolean isRemoved)
+		private void tryBreakBlockEarthMode(CallbackInfoReturnable<Boolean> callbackInfo, @Local(ordinal = 0) BlockPos pos, @Local(ordinal = 0) Block block, @Local(ordinal = 0) BlockState blockState, @Local(ordinal = 0) BlockEntity blockEntity, @Local(ordinal = 0) boolean isRemoved)
 		{
 			ServerPlayerEntity player = ((ServerPlayerInteractionManagerAccessor) this).getPlayer();
 			if (((EarthModePlayer) player).isEarthMode())
