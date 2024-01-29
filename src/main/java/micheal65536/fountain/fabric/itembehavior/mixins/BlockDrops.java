@@ -37,7 +37,7 @@ public class BlockDrops
 				if (((ServerPlayerInteractionManager) (Object) this).isCreative())
 				{
 					ItemStack itemStack = block.getPickStack(world, pos, blockState);
-					EarthItemPickup.giveItemToEarthPlayer(player, itemStack, pos.toCenterPos());
+					EarthItemPickup.giveItemToEarthPlayer(player, itemStack, pos.toCenterPos(), true);
 				}
 				else
 				{
@@ -67,7 +67,7 @@ public class BlockDrops
 			{
 				Block.getDroppedStacks(state, serverWorld, pos, blockEntity, entity, tool).forEach(itemStack ->
 				{
-					EarthItemPickup.giveItemToEarthPlayer(serverPlayerEntity, itemStack, pos.toCenterPos());
+					EarthItemPickup.giveItemToEarthPlayer(serverPlayerEntity, itemStack, pos.toCenterPos(), true);
 				});
 				state.onStacksDropped(serverWorld, pos, tool, false);
 				callbackInfo.cancel();

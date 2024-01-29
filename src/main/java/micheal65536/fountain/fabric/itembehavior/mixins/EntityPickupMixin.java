@@ -29,7 +29,7 @@ public class EntityPickupMixin
 				{
 					Vec3d pos = entity.getPos();
 					entity.discard();
-					EarthItemPickup.giveItemToEarthPlayer((ServerPlayerEntity) (Object) this, itemStack, pos);
+					EarthItemPickup.giveItemToEarthPlayer((ServerPlayerEntity) (Object) this, itemStack, pos, false);
 
 					callbackInfo.cancel();
 				}

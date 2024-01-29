@@ -14,7 +14,7 @@ public class EarthItemPickup
 {
 	public static final Identifier FOUNTAIN_ITEM_PARTICLE_PACKET_ID = new Identifier("fountain", "item_particle");
 
-	public static void giveItemToEarthPlayer(ServerPlayerEntity player, ItemStack itemStack, Vec3d pos)
+	public static void giveItemToEarthPlayer(ServerPlayerEntity player, ItemStack itemStack, Vec3d pos, boolean showItemParticle)
 	{
 		if (!((EarthModePlayer) player).isEarthMode())
 		{
@@ -32,10 +32,13 @@ public class EarthItemPickup
 			return;
 		}
 
-		// TODO: send item particles to all Earth players
-		PacketByteBuf buf = PacketByteBufs.create();
-		buf.writeItemStack(itemStack1);
-		buf.writeVec3d(pos);
-		ServerPlayNetworking.send(player, FOUNTAIN_ITEM_PARTICLE_PACKET_ID, buf);
+		if (showItemParticle)
+		{
+			// TODO: send item particles to all Earth players
+			PacketByteBuf buf = PacketByteBufs.create();
+			buf.writeItemStack(itemStack1);
+			buf.writeVec3d(pos);
+			ServerPlayNetworking.send(player, FOUNTAIN_ITEM_PARTICLE_PACKET_ID, buf);
+		}
 	}
 }
