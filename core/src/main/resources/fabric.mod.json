@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "${id}",
+  "version": "${version}",
+  "name": "Fountain (core)",
+  "description": "Fabric mod component of Fountain (core)",
+  "authors": [
+    "micheal65536"
+  ],
+  "environment": "server",
+  "entrypoints": {
+    "server": [
+      "micheal65536.fountain.fabric.core.Main"
+    ]
+  },
+  "mixins": [
+    "mixins.earthmode.json",
+    "mixins.itembehavior.json",
+    "mixins.movement.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.20.4",
+    "java": ">=17",
+    "fabric-api": "*"
+  }
+}

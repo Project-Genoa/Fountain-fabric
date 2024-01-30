@@ -1,27 +1,17 @@
 {
   "schemaVersion": 1,
-  "id": "fountain",
+  "id": "${id}",
   "version": "${version}",
   "name": "Fountain",
-  "description": "Fabric mod to make Minecraft Java Edition compatible with Minecraft Earth via Fountain bridge",
+  "description": "Fabric mod component of Fountain",
   "authors": [
     "micheal65536"
   ],
-  "environment": "server",
+  "environment": "*",
   "entrypoints": {
-    "server": [
-      "micheal65536.fountain.fabric.Main"
-    ]
   },
   "mixins": [
-    "fountain.mixins.earthmode.json",
-    "fountain.mixins.itembehavior.json",
-    "fountain.mixins.movement.json"
   ],
   "depends": {
-    "fabricloader": ">=0.15.0",
-    "minecraft": "~1.20.4",
-    "java": ">=17",
-    "fabric-api": "*"
   }
 }

@@ -1,5 +1,8 @@
 /build
 /run
 /.gradle
+/*/build
+/*/run
+/*/.gradle
 /.idea
 /.vscode
