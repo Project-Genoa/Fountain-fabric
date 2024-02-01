@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import micheal65536.fountain.fabric.generator.blocks.EarthConstraintBlock;
+import micheal65536.fountain.fabric.generator.blocks.NonReplaceableAirBlock;
 import micheal65536.fountain.fabric.generator.blocks.SolidAirBlock;
 
 public class Main implements ModInitializer
@@ -32,6 +33,8 @@ public class Main implements ModInitializer
 		BlockItem borderConstraintBlockItem = new OperatorOnlyBlockItem(borderConstraintBlock, new FabricItemSettings());
 		Block solidAirBlock = new SolidAirBlock();
 		BlockItem solidAirBlockItem = new OperatorOnlyBlockItem(solidAirBlock, new FabricItemSettings());
+		Block nonReplaceableAirBlock = new NonReplaceableAirBlock();
+		BlockItem nonReplaceableAirBlockItem = new OperatorOnlyBlockItem(nonReplaceableAirBlock, new FabricItemSettings());
 
 		Registry.register(Registries.BLOCK, new Identifier("fountain", "invisible_constraint"), invisibleConstraintBlock);
 		Registry.register(Registries.ITEM, new Identifier("fountain", "invisible_constraint"), invisibleConstraintBlockItem);
@@ -41,6 +44,8 @@ public class Main implements ModInitializer
 		Registry.register(Registries.ITEM, new Identifier("fountain", "border_constraint"), borderConstraintBlockItem);
 		Registry.register(Registries.BLOCK, new Identifier("fountain", "solid_air"), solidAirBlock);
 		Registry.register(Registries.ITEM, new Identifier("fountain", "solid_air"), solidAirBlockItem);
+		Registry.register(Registries.BLOCK, new Identifier("fountain", "non_replaceable_air"), nonReplaceableAirBlock);
+		Registry.register(Registries.ITEM, new Identifier("fountain", "non_replaceable_air"), nonReplaceableAirBlockItem);
 
 		Registry.register(Registries.ITEM_GROUP, new Identifier("fountain", "fountain"), FabricItemGroup.builder()
 				.displayName(Text.literal("fountain-generator"))
@@ -51,6 +56,7 @@ public class Main implements ModInitializer
 					entries.add(blendConstraintBlockItem);
 					entries.add(borderConstraintBlockItem);
 					entries.add(solidAirBlockItem);
+					entries.add(nonReplaceableAirBlockItem);
 				})
 				.build()
 		);
