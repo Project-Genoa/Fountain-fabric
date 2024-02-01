@@ -12,6 +12,7 @@
     "BlockDrops$ServerPlayerInteractionManagerMixin",
     "BlockDrops$BlockMixin",
     "BlockDrops$ServerPlayerInteractionManagerAccessor",
+    "EntitiesInteractOutsideWorldBorderMixin",
     "EntityPickupMixin",
     "InstantItemUseMixin",
     "InstantItemUseMixin$LivingEntityAccessor",

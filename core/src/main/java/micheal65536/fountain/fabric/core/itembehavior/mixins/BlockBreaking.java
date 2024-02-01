@@ -72,11 +72,7 @@ public class BlockBreaking
 		{
 			ServerWorld world = ((ServerPlayerInteractionManagerAccessor) serverPlayerInteractionManager).getWorld();
 			BlockState blockState = world.getBlockState(pos);
-			if (!world.canPlayerModifyAt(player, pos))
-			{
-				player.networkHandler.sendPacket(new BlockUpdateS2CPacket(pos, blockState));
-				return;
-			}
+			// removed the world.canPlayerModifyAt(player, pos) check here because that prevents Earth players from being able to pick up blocks outside the world border, which they should be able to do in case they mess up their buildplate
 
 			if (serverPlayerInteractionManager.isCreative())
 			{
