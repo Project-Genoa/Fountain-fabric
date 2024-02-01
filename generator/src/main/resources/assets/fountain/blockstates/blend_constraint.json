@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "fountain:block/blend_constraint"
+    }
+  }
+}

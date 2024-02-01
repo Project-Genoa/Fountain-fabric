@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "${id}",
+  "version": "${version}",
+  "name": "Fountain (generator)",
+  "description": "Fabric mod component of Fountain (generator)",
+  "authors": [
+    "micheal65536"
+  ],
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "micheal65536.fountain.fabric.generator.Main"
+    ]
+  },
+  "mixins": [
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.20.4",
+    "java": ">=17",
+    "fabric-api": "*"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "fountain:block/border_constraint"
+    }
+  }
+}
