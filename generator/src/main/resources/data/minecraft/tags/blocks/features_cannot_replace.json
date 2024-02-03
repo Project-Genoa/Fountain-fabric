@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "fountain:invisible_constraint",
+    "fountain:blend_constraint",
+    "fountain:border_constraint",
+    "fountain:solid_air",
+    "fountain:non_replaceable_air"
+  ]
+}

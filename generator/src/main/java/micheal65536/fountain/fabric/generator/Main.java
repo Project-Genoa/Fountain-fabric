@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import micheal65536.fountain.fabric.generator.blocks.EarthConstraintBlock;
 import micheal65536.fountain.fabric.generator.blocks.NonReplaceableAirBlock;
 import micheal65536.fountain.fabric.generator.blocks.SolidAirBlock;
+import micheal65536.fountain.fabric.generator.terraingen.WrapperChunkGenerator;
 
 public class Main implements ModInitializer
 {
@@ -25,6 +26,8 @@ public class Main implements ModInitializer
 	@Override
 	public void onInitialize()
 	{
+		// blocks
+
 		Block invisibleConstraintBlock = new EarthConstraintBlock();
 		BlockItem invisibleConstraintBlockItem = new OperatorOnlyBlockItem(invisibleConstraintBlock, new FabricItemSettings());
 		Block blendConstraintBlock = new EarthConstraintBlock();
@@ -60,5 +63,9 @@ public class Main implements ModInitializer
 				})
 				.build()
 		);
+
+		// chunk generators
+
+		Registry.register(Registries.CHUNK_GENERATOR, new Identifier("fountain", "wrapper"), WrapperChunkGenerator.CODEC);
 	}
 }

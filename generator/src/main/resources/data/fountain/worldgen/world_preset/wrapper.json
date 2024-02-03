@@ -1,0 +1,18 @@
+{
+  "dimensions": {
+    "minecraft:overworld": {
+      "type": "minecraft:overworld",
+      "generator": {
+        "type": "fountain:wrapper",
+        "inner": {
+          "type": "minecraft:noise",
+          "settings": "minecraft:overworld",
+          "biome_source": {
+            "type": "multi_noise",
+            "preset": "minecraft:overworld"
+          }
+        }
+      }
+    }
+  }
+}
