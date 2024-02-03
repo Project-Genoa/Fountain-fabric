@@ -15,7 +15,8 @@
   },
   "mixins": [
     "mixins.blocks.json",
-    "mixins.terraingen.json"
+    "mixins.terraingen.json",
+    "mixins.worldborder.json"
   ],
   "depends": {
     "fabricloader": ">=0.15.0",
