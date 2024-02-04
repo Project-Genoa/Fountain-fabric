@@ -14,7 +14,6 @@ import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import micheal65536.fountain.fabric.generator.blocks.BorderConstraintBlock;
 import micheal65536.fountain.fabric.generator.blocks.EarthConstraintBlock;
 import micheal65536.fountain.fabric.generator.blocks.NonReplaceableAirBlock;
 import micheal65536.fountain.fabric.generator.blocks.SolidAirBlock;
@@ -34,7 +33,7 @@ public class Main implements ModInitializer
 		BlockItem invisibleConstraintBlockItem = new OperatorOnlyBlockItem(invisibleConstraintBlock, new FabricItemSettings());
 		Block blendConstraintBlock = new EarthConstraintBlock();
 		BlockItem blendConstraintBlockItem = new OperatorOnlyBlockItem(blendConstraintBlock, new FabricItemSettings());
-		Block borderConstraintBlock = new BorderConstraintBlock();
+		Block borderConstraintBlock = new EarthConstraintBlock();
 		BlockItem borderConstraintBlockItem = new OperatorOnlyBlockItem(borderConstraintBlock, new FabricItemSettings());
 		Block solidAirBlock = new SolidAirBlock();
 		BlockItem solidAirBlockItem = new OperatorOnlyBlockItem(solidAirBlock, new FabricItemSettings());

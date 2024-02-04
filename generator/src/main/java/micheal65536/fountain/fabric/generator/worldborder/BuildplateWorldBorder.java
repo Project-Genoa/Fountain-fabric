@@ -15,7 +15,6 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkStatus;
 
 import micheal65536.fountain.fabric.generator.Main;
-import micheal65536.fountain.fabric.generator.blocks.BorderConstraintBlock;
 import micheal65536.fountain.fabric.generator.blocks.NonReplaceableAirBlock;
 
 public class BuildplateWorldBorder extends WorldBorder
@@ -37,7 +36,7 @@ public class BuildplateWorldBorder extends WorldBorder
 			return true;
 		}
 		Block block = chunk.getBlockState(pos).getBlock();
-		return !(block instanceof NonReplaceableAirBlock || block instanceof BorderConstraintBlock);
+		return !(block instanceof NonReplaceableAirBlock);
 	}
 
 	@Override

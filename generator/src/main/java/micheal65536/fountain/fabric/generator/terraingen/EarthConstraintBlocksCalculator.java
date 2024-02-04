@@ -101,7 +101,7 @@ public class EarthConstraintBlocksCalculator
 		}
 		else if (y > maxY)
 		{
-			if (x <= minX - 4 || x >= maxX + 4 || z <= minZ - 4 || z >= maxZ + 4)
+			if (x <= minX - 5 || x >= maxX + 5 || z <= minZ - 5 || z >= maxZ + 5)
 			{
 				return this.nonReplaceableAirBlockState;
 			}
