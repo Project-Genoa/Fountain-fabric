@@ -18,6 +18,7 @@ import micheal65536.fountain.fabric.generator.blocks.BorderConstraintBlock;
 import micheal65536.fountain.fabric.generator.blocks.EarthConstraintBlock;
 import micheal65536.fountain.fabric.generator.blocks.NonReplaceableAirBlock;
 import micheal65536.fountain.fabric.generator.blocks.SolidAirBlock;
+import micheal65536.fountain.fabric.generator.terraingen.EmptyChunkGenerator;
 import micheal65536.fountain.fabric.generator.terraingen.WrapperChunkGenerator;
 
 public class Main implements ModInitializer
@@ -67,6 +68,7 @@ public class Main implements ModInitializer
 
 		// chunk generators
 
+		Registry.register(Registries.CHUNK_GENERATOR, new Identifier("fountain", "empty"), EmptyChunkGenerator.CODEC);
 		Registry.register(Registries.CHUNK_GENERATOR, new Identifier("fountain", "wrapper"), WrapperChunkGenerator.CODEC);
 	}
 }

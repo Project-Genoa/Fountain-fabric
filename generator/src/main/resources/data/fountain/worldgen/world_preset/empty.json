@@ -1,0 +1,11 @@
+{
+  "dimensions": {
+    "minecraft:overworld": {
+      "type": "minecraft:overworld",
+      "generator": {
+        "type": "fountain:empty",
+        "biome": "minecraft:plains"
+      }
+    }
+  }
+}
