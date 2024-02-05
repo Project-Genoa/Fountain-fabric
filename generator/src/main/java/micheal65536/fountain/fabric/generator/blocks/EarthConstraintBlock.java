@@ -3,6 +3,7 @@ package micheal65536.fountain.fabric.generator.blocks;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.OperatorBlock;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.util.math.BlockPos;
@@ -17,6 +18,7 @@ public class EarthConstraintBlock extends Block implements OperatorBlock
 				.suffocates(((state, world, pos) -> false))
 				.strength(-1.0f, 3600000.0f)
 				.pistonBehavior(PistonBehavior.BLOCK)
+				.allowsSpawning(Blocks::never)
 		);
 	}
 
