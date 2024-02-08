@@ -3,9 +3,12 @@ package micheal65536.fountain.fabric.core.itembehavior.mixins;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.network.ServerPlayerInteractionManager;
 import net.minecraft.server.world.ServerWorld;
@@ -38,6 +41,16 @@ public class BlockDrops
 				{
 					ItemStack itemStack = block.getPickStack(world, pos, blockState);
 					EarthItemPickup.giveItemToEarthPlayer(player, itemStack, pos.toCenterPos(), true);
+
+					// special-casing flower pots is ugly but I can't figure out a neater way of doing this and it probably doesn't matter because I can't think of anything else that this would generalise to
+					if (block instanceof FlowerPotBlock)
+					{
+						if (((FlowerPotBlock) block).getContent() != Blocks.AIR)
+						{
+							itemStack = new ItemStack(Items.FLOWER_POT, 1);
+							EarthItemPickup.giveItemToEarthPlayer(player, itemStack, pos.toCenterPos(), true);
+						}
+					}
 				}
 				else
 				{
