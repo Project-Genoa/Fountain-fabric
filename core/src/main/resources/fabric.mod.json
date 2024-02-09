@@ -15,6 +15,7 @@
   },
   "mixins": [
     "mixins.earthmode.json",
+    "mixins.eventdistance.json",
     "mixins.itembehavior.json",
     "mixins.movement.json"
   ],

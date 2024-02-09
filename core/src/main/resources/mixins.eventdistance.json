@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "micheal65536.fountain.fabric.core.eventdistance.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "server": [
+    "PlayerManagerMixin",
+    "PlayerManagerMixin$PlayerManagerAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
