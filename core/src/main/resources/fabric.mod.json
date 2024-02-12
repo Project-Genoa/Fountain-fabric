@@ -17,7 +17,8 @@
     "mixins.earthmode.json",
     "mixins.eventdistance.json",
     "mixins.itembehavior.json",
-    "mixins.movement.json"
+    "mixins.movement.json",
+    "mixins.piston.json"
   ],
   "depends": {
     "fabricloader": ">=0.15.0",

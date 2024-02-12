@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "micheal65536.fountain.fabric.core.piston.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "server": [
+    "PistonBlockEntityMixin",
+    "PistonBlockEntityMixin$PistonBlockEntityAccessor",
+    "PistonBlockMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
