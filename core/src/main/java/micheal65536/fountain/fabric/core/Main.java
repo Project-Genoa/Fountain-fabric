@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import micheal65536.fountain.fabric.core.earthmode.EarthModeCommand;
 import micheal65536.fountain.fabric.core.earthmode.EarthModePacket;
+import micheal65536.fountain.fabric.core.inventory.InventorySync;
 
 public class Main implements DedicatedServerModInitializer
 {
@@ -18,5 +19,7 @@ public class Main implements DedicatedServerModInitializer
 	{
 		CommandRegistrationCallback.EVENT.register(EarthModeCommand.COMMAND_REGISTRATION_CALLBACK);
 		ServerPlayNetworking.registerGlobalReceiver(EarthModePacket.FOUNTAIN_EARTH_MODE_PACKET_ID, EarthModePacket.CHANNEL_HANDLER);
+		ServerPlayNetworking.registerGlobalReceiver(InventorySync.FOUNTAIN_INVENTORY_SYNC_REQUEST_PACKET_ID, InventorySync.INVENTORY_SYNC_REQUEST_CHANNEL_HANDLER);
+		ServerPlayNetworking.registerGlobalReceiver(InventorySync.FOUNTAIN_SET_HOTBAR_REQUEST_PACKET_ID, InventorySync.SET_HOTBAR_REQUEST_CHANNEL_HANDLER);
 	}
 }
