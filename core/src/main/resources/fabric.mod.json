@@ -18,6 +18,7 @@
     "mixins.eventdistance.json",
     "mixins.itembehavior.json",
     "mixins.movement.json",
+    "mixins.noteblock.json",
     "mixins.piston.json"
   ],
   "depends": {
