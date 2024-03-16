@@ -14,12 +14,12 @@
     ]
   },
   "mixins": [
-    "mixins.earthmode.json",
-    "mixins.eventdistance.json",
-    "mixins.itembehavior.json",
-    "mixins.movement.json",
-    "mixins.noteblock.json",
-    "mixins.piston.json"
+    "fountain-core.mixins.earthmode.json",
+    "fountain-core.mixins.eventdistance.json",
+    "fountain-core.mixins.itembehavior.json",
+    "fountain-core.mixins.movement.json",
+    "fountain-core.mixins.noteblock.json",
+    "fountain-core.mixins.piston.json"
   ],
   "depends": {
     "fabricloader": ">=0.15.0",
