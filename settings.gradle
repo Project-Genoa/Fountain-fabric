@@ -13,3 +13,4 @@ rootProject.name = "fountain"
 
 include 'core'
 include 'generator'
+include 'connector'

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "${id}",
+  "version": "${version}",
+  "name": "Fountain (connector)",
+  "description": "Fabric mod component of Fountain (connector)",
+  "authors": [
+    "micheal65536"
+  ],
+  "environment": "server",
+  "entrypoints": {
+    "server": [
+      "micheal65536.fountain.fabric.connector.Main"
+    ]
+  },
+  "mixins": [
+    "fountain-connector.mixins.events.json",
+    "fountain-connector.mixins.pluginlifecycle.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.20.4",
+    "java": ">=17",
+    "fabric-api": "*"
+  }
+}

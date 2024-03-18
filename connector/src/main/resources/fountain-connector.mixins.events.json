@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "micheal65536.fountain.fabric.connector.mixins.events",
+  "compatibilityLevel": "JAVA_17",
+  "server": [
+    "MinecraftServerMixin",
+    "MinecraftServerMixin$ServerWorldAccessor",
+    "MinecraftDedicatedServerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

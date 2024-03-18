@@ -4,6 +4,8 @@ Fabric mod component of Fountain. This mod changes some parts of the Minecraft J
 
 ## Building
 
+Fountain provides a plugin interface which is published as a separate library. Before building Fountain, you must download this from https://github.com/Project-Genoa/Fountain-connector-plugin-base and build and install it to your local Maven repository by running `./mvnw install` from the root directory of the Fountain-connector-plugin-base repository.
+
 To build, run `./gradlew build` from the project root directory. This will take some time to run if you have never built a Fabric mod from source before, as Gradle will need to download dependencies and run the Fabric Loom.
 
 The build output will be in `/build/libs/`.
