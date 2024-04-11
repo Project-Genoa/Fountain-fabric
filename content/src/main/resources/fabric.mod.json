@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "${id}",
+  "version": "${version}",
+  "name": "Fountain (content)",
+  "description": "Fabric mod component of Fountain (content)",
+  "authors": [
+    "micheal65536"
+  ],
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "micheal65536.fountain.fabric.content.Main"
+    ],
+    "client": [
+      "micheal65536.fountain.fabric.content.ClientMain"
+    ]
+  },
+  "mixins": [
+    "fountain-content.mixins.entities.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.20.4",
+    "java": ">=17",
+    "fabric-api": "*"
+  }
+}

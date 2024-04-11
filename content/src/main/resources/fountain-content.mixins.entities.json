@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "micheal65536.fountain.fabric.content.entities.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "DefaultAttributeRegistryAccessor",
+    "EntityTypeAccessor",
+    "SheepVariantDyeMixin"
+  ],
+  /*"client": [
+    "SheepWoolFeatureRendererMixin",
+    "SheepWoolFeatureRendererMixin$FeatureRendererAccessor"
+  ],*/
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
