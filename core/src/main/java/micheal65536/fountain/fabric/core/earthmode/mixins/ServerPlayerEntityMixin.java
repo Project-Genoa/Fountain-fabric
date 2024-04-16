@@ -1,5 +1,6 @@
 package micheal65536.fountain.fabric.core.earthmode.mixins;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerAbilities;
 import net.minecraft.server.network.ServerPlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -41,5 +42,18 @@ public class ServerPlayerEntityMixin implements EarthModePlayer
 	private void copyFrom(ServerPlayerEntity oldPlayer, boolean alive, CallbackInfo callbackInfo)
 	{
 		this.setEarthMode(((EarthModePlayer) oldPlayer).isEarthMode());
+	}
+
+	// prevent Earth players from riding entities
+	public boolean canStartRiding(Entity entity)
+	{
+		if (this.earthMode)
+		{
+			return false;
+		}
+		else
+		{
+			return !((ServerPlayerEntity) (Object) this).isSneaking();
+		}
 	}
 }
