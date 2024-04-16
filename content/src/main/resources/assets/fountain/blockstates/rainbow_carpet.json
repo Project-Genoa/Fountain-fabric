@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "fountain:block/rainbow_carpet",
+      "y": 180
+    },
+    "facing=north": {
+      "model": "fountain:block/rainbow_carpet",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "fountain:block/rainbow_carpet",
+      "y": 270
+    },
+    "facing=west": {
+      "model": "fountain:block/rainbow_carpet",
+      "y": 0
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "fountain:block/rainbow_wool_a_rotated",
+    "down": "fountain:block/rainbow_wool_e",
+    "up": "fountain:block/rainbow_wool_f",
+    "north": "fountain:block/rainbow_wool_b_rotated",
+    "south": "fountain:block/rainbow_wool_c_rotated",
+    "west": "fountain:block/rainbow_wool_a_rotated",
+    "east": "fountain:block/rainbow_wool_d_rotated"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "variants": {
+    "facing=up": {
+      "model": "fountain:block/rainbow_wool",
+      "x": 0
+    },
+    "facing=down": {
+      "model": "fountain:block/rainbow_wool",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "fountain:block/rainbow_wool",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "fountain:block/rainbow_wool",
+      "x": 90,
+      "y": 0
+    },
+    "facing=south": {
+      "model": "fountain:block/rainbow_wool",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fountain:block/rainbow_wool",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

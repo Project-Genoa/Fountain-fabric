@@ -63,6 +63,7 @@ public class ClientMain implements ClientModInitializer
 		this.registerEarthMobVariantRenderer("genoa:inky_sheep", "sheep/inky_sheep.png", SheepVariantEntityRenderer::new);
 		this.registerEarthMobVariantRenderer("genoa:long_nosed_sheep", "sheep/long_nosed_sheep.png", SheepVariantEntityRenderer::new);
 		this.registerEarthMobVariantRenderer("genoa:patched_sheep", "sheep/patched_sheep.png", SheepVariantEntityRenderer::new);
+		this.registerEarthMobVariantRenderer("genoa:rainbow_sheep", "sheep/rainbow_sheep.png", SheepVariantEntityRenderer::new);    // TODO: fix model
 		this.registerEarthMobVariantRenderer("genoa:rocky_sheep", "sheep/rocky_sheep.png", SheepVariantEntityRenderer::new);
 	}
 

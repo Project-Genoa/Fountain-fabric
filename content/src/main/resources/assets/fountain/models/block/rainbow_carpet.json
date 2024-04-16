@@ -1,0 +1,6 @@
+{
+  "parent": "block/carpet",
+  "textures": {
+    "wool": "fountain:block/rainbow_wool_c"
+  }
+}

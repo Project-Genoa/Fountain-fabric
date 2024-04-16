@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "fountain:rainbow_wool"
+        }
+      ],
+      "rolls": 1.0,
+      "bonus_rolls": 0.0
+    },
+    {
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "minecraft:entities/sheep"
+        }
+      ],
+      "rolls": 1.0,
+      "bonus_rolls": 0.0
+    }
+  ],
+  "random_sequence": "fountain:entities/sheep/rainbow"
+}

@@ -2,8 +2,11 @@ package micheal65536.fountain.fabric.content;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.SpawnEggItem;
@@ -16,7 +19,10 @@ import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import micheal65536.fountain.fabric.content.blocks.RainbowCarpetBlock;
+import micheal65536.fountain.fabric.content.blocks.RainbowWoolBlock;
 import micheal65536.fountain.fabric.content.entities.ChickenVariantEntity;
+import micheal65536.fountain.fabric.content.entities.RainbowSheepEntity;
 import micheal65536.fountain.fabric.content.entities.SheepVariantEntity;
 import micheal65536.fountain.fabric.content.entities.mixins.DefaultAttributeRegistryAccessor;
 import micheal65536.fountain.fabric.content.entities.mixins.EntityTypeAccessor;
@@ -28,6 +34,20 @@ public class Main implements ModInitializer
 	@Override
 	public void onInitialize()
 	{
+		// blocks/items
+
+		Block rainbowCarpetBlock = new RainbowCarpetBlock(AbstractBlock.Settings.copy(Registries.BLOCK.get(new Identifier("white_carpet"))).mapColor(DyeColor.RED));
+		BlockItem rainbowCarpetBlockItem = new BlockItem(rainbowCarpetBlock, new Item.Settings());
+		Registry.register(Registries.BLOCK, new Identifier("fountain", "rainbow_carpet"), rainbowCarpetBlock);
+		Registry.register(Registries.ITEM, new Identifier("fountain", "rainbow_carpet"), rainbowCarpetBlockItem);
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COLORED_BLOCKS).register(entries -> entries.add(rainbowCarpetBlockItem));
+
+		Block rainbowWoolBlock = new RainbowWoolBlock(AbstractBlock.Settings.copy(Registries.BLOCK.get(new Identifier("white_wool"))).mapColor(DyeColor.RED));
+		BlockItem rainbowWoolBlockItem = new BlockItem(rainbowWoolBlock, new Item.Settings());
+		Registry.register(Registries.BLOCK, new Identifier("fountain", "rainbow_wool"), rainbowWoolBlock);
+		Registry.register(Registries.ITEM, new Identifier("fountain", "rainbow_wool"), rainbowWoolBlockItem);
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COLORED_BLOCKS).register(entries -> entries.add(rainbowWoolBlockItem));
+
 		// entities
 
 		this.registerEarthMobVariant("minecraft:chicken", "genoa:amber_chicken", ChickenVariantEntity::new);
@@ -77,7 +97,7 @@ public class Main implements ModInitializer
 		this.registerEarthMobVariant("minecraft:sheep", "genoa:inky_sheep", SheepVariantEntity.createFactory(true, DyeColor.GRAY));
 		this.registerEarthMobVariant("minecraft:sheep", "genoa:long_nosed_sheep", SheepVariantEntity.createFactory(true, DyeColor.BROWN));
 		this.registerEarthMobVariant("minecraft:sheep", "genoa:patched_sheep", SheepVariantEntity.createFactory(true, DyeColor.WHITE));
-		// TODO: rainbow_sheep
+		this.registerEarthMobVariant("minecraft:sheep", "genoa:rainbow_sheep", RainbowSheepEntity::new);
 		this.registerEarthMobVariant("minecraft:sheep", "genoa:rocky_sheep", SheepVariantEntity.createFactory(true, DyeColor.GRAY));
 
 		// TODO: melon_golem
