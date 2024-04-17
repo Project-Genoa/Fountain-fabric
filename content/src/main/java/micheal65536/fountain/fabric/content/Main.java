@@ -22,8 +22,10 @@ import org.slf4j.LoggerFactory;
 import micheal65536.fountain.fabric.content.blocks.RainbowCarpetBlock;
 import micheal65536.fountain.fabric.content.blocks.RainbowWoolBlock;
 import micheal65536.fountain.fabric.content.entities.ChickenVariantEntity;
+import micheal65536.fountain.fabric.content.entities.GenoaSlimeEntity;
 import micheal65536.fountain.fabric.content.entities.RainbowSheepEntity;
 import micheal65536.fountain.fabric.content.entities.SheepVariantEntity;
+import micheal65536.fountain.fabric.content.entities.TropicalSlimeEntity;
 import micheal65536.fountain.fabric.content.entities.mixins.DefaultAttributeRegistryAccessor;
 import micheal65536.fountain.fabric.content.entities.mixins.EntityTypeAccessor;
 
@@ -99,6 +101,11 @@ public class Main implements ModInitializer
 		this.registerEarthMobVariant("minecraft:sheep", "genoa:patched_sheep", SheepVariantEntity.createFactory(true, DyeColor.WHITE));
 		this.registerEarthMobVariant("minecraft:sheep", "genoa:rainbow_sheep", RainbowSheepEntity::new);
 		this.registerEarthMobVariant("minecraft:sheep", "genoa:rocky_sheep", SheepVariantEntity.createFactory(true, DyeColor.GRAY));
+
+		this.registerEarthMobVariant("minecraft:slime", "genoa:genoa_slime", (EntityType.EntityFactory<GenoaSlimeEntity>) (entityType, world) -> new GenoaSlimeEntity(entityType, world, 4));
+		this.registerEarthMobVariant("minecraft:slime", "genoa:genoa_slime_half", (EntityType.EntityFactory<GenoaSlimeEntity>) (entityType, world) -> new GenoaSlimeEntity(entityType, world, 2));
+		this.registerEarthMobVariant("minecraft:slime", "genoa:genoa_slime_quarter", (EntityType.EntityFactory<GenoaSlimeEntity>) (entityType, world) -> new GenoaSlimeEntity(entityType, world, 1));
+		this.registerEarthMobVariant("minecraft:slime", "genoa:tropical_slime", TropicalSlimeEntity::new);
 
 		// TODO: melon_golem
 

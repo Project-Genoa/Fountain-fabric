@@ -4,7 +4,9 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.render.entity.SlimeEntityRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.mob.SlimeEntity;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
@@ -20,6 +22,7 @@ import micheal65536.fountain.fabric.content.entities.renderer.PigVariant2EntityR
 import micheal65536.fountain.fabric.content.entities.renderer.PigVariantEntityRenderer;
 import micheal65536.fountain.fabric.content.entities.renderer.RabbitVariantEntityRenderer;
 import micheal65536.fountain.fabric.content.entities.renderer.SheepVariantEntityRenderer;
+import micheal65536.fountain.fabric.content.entities.renderer.SlimeVariantEntityRenderer;
 
 public class ClientMain implements ClientModInitializer
 {
@@ -65,6 +68,16 @@ public class ClientMain implements ClientModInitializer
 		this.registerEarthMobVariantRenderer("genoa:patched_sheep", "sheep/patched_sheep.png", SheepVariantEntityRenderer::new);
 		this.registerEarthMobVariantRenderer("genoa:rainbow_sheep", "sheep/rainbow_sheep.png", SheepVariantEntityRenderer::new);    // TODO: fix model
 		this.registerEarthMobVariantRenderer("genoa:rocky_sheep", "sheep/rocky_sheep.png", SheepVariantEntityRenderer::new);
+
+		this.registerEarthMobVariantRenderer("genoa:genoa_slime", (EntityRendererFactory<SlimeEntity>) SlimeEntityRenderer::new);
+		this.registerEarthMobVariantRenderer("genoa:genoa_slime_half", (EntityRendererFactory<SlimeEntity>) SlimeEntityRenderer::new);
+		this.registerEarthMobVariantRenderer("genoa:genoa_slime_quarter", (EntityRendererFactory<SlimeEntity>) SlimeEntityRenderer::new);
+		this.registerEarthMobVariantRenderer("genoa:tropical_slime", "slime/tropical_slime.png", SlimeVariantEntityRenderer::new);
+	}
+
+	private void registerEarthMobVariantRenderer(@NotNull String type, @NotNull EntityRendererFactory<?> entityRendererFactory)
+	{
+		EntityRendererRegistry.register(Registries.ENTITY_TYPE.get(new Identifier(type)), (EntityRendererFactory) entityRendererFactory);
 	}
 
 	private void registerEarthMobVariantRenderer(@NotNull String type, @NotNull String textureName, @NotNull VariantEntityRendererFactory<?> entityRendererFactory)

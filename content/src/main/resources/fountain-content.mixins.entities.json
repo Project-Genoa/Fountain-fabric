@@ -5,7 +5,8 @@
   "mixins": [
     "DefaultAttributeRegistryAccessor",
     "EntityTypeAccessor",
-    "SheepVariantDyeMixin"
+    "SheepVariantDyeMixin",
+    "SlimeEntityMixin"
   ],
   /*"client": [
     "SheepWoolFeatureRendererMixin",
