@@ -2,6 +2,7 @@ package micheal65536.fountain.fabric.content.entities;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.SlimeEntity;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
 public class TropicalSlimeEntity extends SlimeEntity
@@ -18,4 +19,10 @@ public class TropicalSlimeEntity extends SlimeEntity
 	}
 
 	// TODO: implement behavior - tropical slime is supposed to be passive until attacked
+
+	@Override
+	protected Identifier getLootTableId()
+	{
+		return new Identifier("fountain", "entities/slime/tropical_slime");
+	}
 }

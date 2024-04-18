@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:tropical_fish"
+        }
+      ],
+      "rolls": 1.0,
+      "bonus_rolls": 0.0
+    }
+  ],
+  "random_sequence": "fountain:entities/slime/tropical_slime"
+}
