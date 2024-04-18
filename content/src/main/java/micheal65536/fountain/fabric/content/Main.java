@@ -92,11 +92,10 @@ public class Main implements ModInitializer
 		this.registerEarthMobVariant("minecraft:rabbit", "genoa:muddy_foot_rabbit");
 		this.registerEarthMobVariant("minecraft:rabbit", "genoa:vested_rabbit");
 
-		// TODO: find out what the correct behavior is for shearing/dying sheep variants
 		this.registerEarthMobVariant("minecraft:sheep", "genoa:flecked_sheep", SheepVariantEntity.createFactory(true, DyeColor.BROWN));
 		// TODO: fuzzy_sheep
 		// TODO: horned_sheep
-		this.registerEarthMobVariant("minecraft:sheep", "genoa:inky_sheep", SheepVariantEntity.createFactory(true, DyeColor.GRAY));
+		this.registerEarthMobVariant("minecraft:sheep", "genoa:inky_sheep", SheepVariantEntity.createFactory(true, DyeColor.BLACK));
 		this.registerEarthMobVariant("minecraft:sheep", "genoa:long_nosed_sheep", SheepVariantEntity.createFactory(true, DyeColor.BROWN));
 		this.registerEarthMobVariant("minecraft:sheep", "genoa:patched_sheep", SheepVariantEntity.createFactory(true, DyeColor.WHITE));
 		this.registerEarthMobVariant("minecraft:sheep", "genoa:rainbow_sheep", RainbowSheepEntity::new);
