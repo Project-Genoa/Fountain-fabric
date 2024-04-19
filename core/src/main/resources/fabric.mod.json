@@ -17,6 +17,7 @@
     "fountain-core.mixins.earthmode.json",
     "fountain-core.mixins.eventdistance.json",
     "fountain-core.mixins.itembehavior.json",
+    "fountain-core.mixins.mobdespawn.json",
     "fountain-core.mixins.movement.json",
     "fountain-core.mixins.noteblock.json",
     "fountain-core.mixins.piston.json"
