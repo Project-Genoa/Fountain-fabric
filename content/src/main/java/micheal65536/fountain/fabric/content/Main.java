@@ -26,6 +26,7 @@ import micheal65536.fountain.fabric.content.entities.GenoaSlimeEntity;
 import micheal65536.fountain.fabric.content.entities.RainbowSheepEntity;
 import micheal65536.fountain.fabric.content.entities.SheepVariantEntity;
 import micheal65536.fountain.fabric.content.entities.TropicalSlimeEntity;
+import micheal65536.fountain.fabric.content.entities.WoolyCowEntity;
 import micheal65536.fountain.fabric.content.entities.mixins.DefaultAttributeRegistryAccessor;
 import micheal65536.fountain.fabric.content.entities.mixins.EntityTypeAccessor;
 
@@ -70,8 +71,8 @@ public class Main implements ModInitializer
 		// TODO: moolip
 		this.registerEarthMobVariant("minecraft:cow", "genoa:pinto_cow");
 		this.registerEarthMobVariant("minecraft:cow", "genoa:sunset_cow");
-		// TODO: umbra_cow
-		// TODO: wooly_cow
+		this.registerEarthMobVariant("minecraft:cow", "genoa:umbra_cow", (EntityType.EntityFactory<WoolyCowEntity>) (entityType, world) -> new WoolyCowEntity(entityType, world, DyeColor.BLACK));
+		this.registerEarthMobVariant("minecraft:cow", "genoa:wooly_cow", (EntityType.EntityFactory<WoolyCowEntity>) (entityType, world) -> new WoolyCowEntity(entityType, world, DyeColor.BROWN));
 
 		// TODO: furnace_golem
 

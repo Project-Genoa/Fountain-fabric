@@ -48,6 +48,8 @@ public class ClientMain implements ClientModInitializer
 		this.registerEarthMobVariantRenderer("genoa:dairy_cow", "cow/dairy_cow.png", CowVariantEntityRenderer::new);
 		this.registerEarthMobVariantRenderer("genoa:pinto_cow", "cow/pinto_cow.png", CowVariant2EntityRenderer::new);
 		this.registerEarthMobVariantRenderer("genoa:sunset_cow", "cow/sunset_cow.png", CowVariant2EntityRenderer::new);
+		this.registerEarthMobVariantRenderer("genoa:umbra_cow", "cow/umbra_cow.png", CowVariant2EntityRenderer::new);
+		this.registerEarthMobVariantRenderer("genoa:wooly_cow", "cow/wooly_cow.png", CowVariant2EntityRenderer::new);    // TODO: like some time I guess we should make a proper mesh for this (and the umbra cow) but idc
 
 		this.registerEarthMobVariantRenderer("genoa:mottled_pig", "pig/pig_mottled.png", PigVariantEntityRenderer::new);
 		this.registerEarthMobVariantRenderer("genoa:pale_pig", "pig/pale_pig.png", PigVariantEntityRenderer::new);
