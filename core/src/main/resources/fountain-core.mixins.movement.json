@@ -3,6 +3,7 @@
   "package": "micheal65536.fountain.fabric.core.movement.mixins",
   "compatibilityLevel": "JAVA_17",
   "server": [
+    "ServerPlayerEntityMixin",
     "ServerPlayNetworkHandlerMixin",
     "ServerPlayNetworkHandlerMixin$ServerPlayNetworkHandlerAccessor"
   ],

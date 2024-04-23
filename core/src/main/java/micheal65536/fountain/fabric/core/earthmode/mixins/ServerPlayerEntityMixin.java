@@ -43,17 +43,4 @@ public class ServerPlayerEntityMixin implements EarthModePlayer
 	{
 		this.setEarthMode(((EarthModePlayer) oldPlayer).isEarthMode());
 	}
-
-	// prevent Earth players from riding entities
-	public boolean canStartRiding(Entity entity)
-	{
-		if (this.earthMode)
-		{
-			return false;
-		}
-		else
-		{
-			return !((ServerPlayerEntity) (Object) this).isSneaking();
-		}
-	}
 }
