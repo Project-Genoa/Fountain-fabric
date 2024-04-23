@@ -5,6 +5,7 @@
   "mixins": [
     "DefaultAttributeRegistryAccessor",
     "EntityTypeAccessor",
+    "SheepDefaultColorMixin",
     "SheepVariantDyeMixin",
     "SlimeEntityMixin"
   ],
