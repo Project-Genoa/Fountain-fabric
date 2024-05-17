@@ -21,10 +21,16 @@ import micheal65536.fountain.fabric.core.earthmode.EarthModePlayer;
 // makes Java buckets behave like Bedrock for Earth players
 // Bedrock uses use-on-block action for buckets whereas Java uses item-use action
 @Mixin(BucketItem.class)
-public class BucketItemMixin
+public abstract class BucketItemMixin extends Item
 {
+	private BucketItemMixin(Settings settings)
+	{
+		super(settings);
+	}
+
 	private ItemUsageContext lastItemUsageContext = null;
 
+	@Override
 	public ActionResult useOnBlock(ItemUsageContext itemUsageContext)
 	{
 		PlayerEntity player = itemUsageContext.getPlayer();
