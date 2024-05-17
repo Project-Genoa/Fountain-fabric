@@ -29,6 +29,7 @@ public abstract class BucketItemMixin extends Item
 	}
 
 	private ItemUsageContext lastItemUsageContext = null;
+	private boolean doRaycast;
 
 	@Override
 	public ActionResult useOnBlock(ItemUsageContext itemUsageContext)
@@ -37,12 +38,26 @@ public abstract class BucketItemMixin extends Item
 		if (player != null && ((EarthModePlayer) player).isEarthMode())
 		{
 			this.lastItemUsageContext = itemUsageContext;
+
+			// we first try to perform the item use using the block provided by the client, if that fails we try again using a raycast
+			// the reason for this is because Earth sometimes sends the water block that the bucket is used on and other times seems to send the solid block behind it
+			// when it sends the water block then the client will also predict it and so in that case we want to use the block sent by the client because the raycast result doesn't always exactly match the client-side prediction and this will cause a mismatch between client and server
+			// when it sends the block behind then no client-side prediction takes place and on the server side the first attempt to use the bucket will fail so we try again using the raycast result and it doesn't matter what the raycast returns because the client doesn't predict it anyway in this case
+			this.doRaycast = false;
 			TypedActionResult<ItemStack> typedActionResult = ((BucketItem) (Object) this).use(itemUsageContext.getWorld(), itemUsageContext.getPlayer(), itemUsageContext.getHand());
+			if (typedActionResult.getResult() == ActionResult.FAIL)
+			{
+				this.doRaycast = true;
+				typedActionResult = ((BucketItem) (Object) this).use(itemUsageContext.getWorld(), itemUsageContext.getPlayer(), itemUsageContext.getHand());
+			}
+
 			if (typedActionResult.getResult() != ActionResult.FAIL)
 			{
 				itemUsageContext.getPlayer().setStackInHand(itemUsageContext.getHand(), typedActionResult.getValue().isEmpty() ? ItemStack.EMPTY : typedActionResult.getValue());
 			}
+
 			this.lastItemUsageContext = null;
+
 			return typedActionResult.getResult();
 		}
 		else
@@ -56,11 +71,18 @@ public abstract class BucketItemMixin extends Item
 	{
 		if (this.lastItemUsageContext != null)
 		{
-			Vec3d start = player.getPos();
-			Vec3d end = this.lastItemUsageContext.getHitPos();
-			double distance = start.distanceTo(end);
-			end = start.lerp(end, (distance + 2.0) / distance);
-			return world.raycast(new RaycastContext(start, end, RaycastContext.ShapeType.OUTLINE, fluidHandling, player));
+			if (this.doRaycast)
+			{
+				Vec3d start = player.getPos().add(0.0f, 1.62f, 0.0f);
+				Vec3d end = this.lastItemUsageContext.getHitPos();
+				double distance = start.distanceTo(end);
+				end = start.lerp(end, (distance + 2.0) / distance);
+				return world.raycast(new RaycastContext(start, end, RaycastContext.ShapeType.OUTLINE, fluidHandling, player));
+			}
+			else
+			{
+				return new BlockHitResult(this.lastItemUsageContext.getHitPos(), this.lastItemUsageContext.getSide(), this.lastItemUsageContext.getBlockPos(), this.lastItemUsageContext.hitsInsideBlock());
+			}
 		}
 		else
 		{
