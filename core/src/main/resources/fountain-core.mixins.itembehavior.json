@@ -20,6 +20,7 @@
     "InteractBlockConsumeItemMixin$ServerPlayerInteractionManagerAccessor",
     "InteractionDistanceMixin",
     "ItemPickupMixin",
+    "PlaceableOnWaterItemMixin",
     "UsePlayerAbilitiesMixin"
   ],
   "injectors": {
