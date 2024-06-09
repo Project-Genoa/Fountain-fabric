@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerPotBlock;
+import net.minecraft.block.SnowBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
@@ -39,16 +40,26 @@ public class BlockDrops
 				ServerWorld world = ((ServerPlayerInteractionManagerAccessor) this).getWorld();
 				if (((ServerPlayerInteractionManager) (Object) this).isCreative())
 				{
-					ItemStack itemStack = block.getPickStack(world, pos, blockState);
-					EarthItemPickup.giveItemToEarthPlayer(player, itemStack, pos.toCenterPos(), true);
-
-					// special-casing flower pots is ugly but I can't figure out a neater way of doing this and it probably doesn't matter because I can't think of anything else that this would generalise to
-					if (block instanceof FlowerPotBlock)
+					// and now we have to special-case snow as well
+					if (block instanceof SnowBlock)
 					{
-						if (((FlowerPotBlock) block).getContent() != Blocks.AIR)
+						ItemStack itemStack = block.getPickStack(world, pos, blockState);
+						itemStack.setCount(blockState.get(SnowBlock.LAYERS));
+						EarthItemPickup.giveItemToEarthPlayer(player, itemStack, pos.toCenterPos(), true);
+					}
+					else
+					{
+						ItemStack itemStack = block.getPickStack(world, pos, blockState);
+						EarthItemPickup.giveItemToEarthPlayer(player, itemStack, pos.toCenterPos(), true);
+
+						// special-casing flower pots is ugly but I can't figure out a neater way of doing this and it probably doesn't matter because I can't think of anything else that this would generalise to
+						if (block instanceof FlowerPotBlock)
 						{
-							itemStack = new ItemStack(Items.FLOWER_POT, 1);
-							EarthItemPickup.giveItemToEarthPlayer(player, itemStack, pos.toCenterPos(), true);
+							if (((FlowerPotBlock) block).getContent() != Blocks.AIR)
+							{
+								itemStack = new ItemStack(Items.FLOWER_POT, 1);
+								EarthItemPickup.giveItemToEarthPlayer(player, itemStack, pos.toCenterPos(), true);
+							}
 						}
 					}
 				}
