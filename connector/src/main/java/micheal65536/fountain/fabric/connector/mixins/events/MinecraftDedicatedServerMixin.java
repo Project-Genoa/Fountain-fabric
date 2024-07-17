@@ -13,7 +13,7 @@ import micheal65536.fountain.fabric.connector.Main;
 @Mixin(MinecraftDedicatedServer.class)
 public class MinecraftDedicatedServerMixin
 {
-	@Inject(method = "setupServer()Z", at = @At(value = "TAIL"))
+	@Inject(method = "setupServer()Z", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/dedicated/MinecraftDedicatedServer;loadWorld()V"))
 	private void setupServer(CallbackInfoReturnable<Boolean> callbackInfo)
 	{
 		ConnectorPlugin connectorPlugin = ((ConnectorMinecraftServer) this).getConnectorPlugin();
