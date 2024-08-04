@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    api(shadow("micheal65536.fountain:connector-plugin-base:0.0.1-SNAPSHOT"))
+    implementation(shadow("micheal65536.fountain:connector-plugin-base:0.0.1-SNAPSHOT"))
 }
 
 shadowJar {

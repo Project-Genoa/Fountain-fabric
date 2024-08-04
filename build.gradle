@@ -4,32 +4,28 @@ plugins {
 }
 
 version = '0.0.1'
+group = 'micheal65536.fountain.fabric'
 
-subprojects {
+allprojects {
     apply plugin: 'fabric-loom'
 
     version = rootProject.version
-
-    base {
-        archivesName = "${rootProject.name}-${project.name}"
-    }
+    group = rootProject.group
 
     loom {
         splitEnvironmentSourceSets()
 
-        mods {
-            "${project.getRootProject().name}-${project.name}" {
-                sourceSet sourceSets.main
-                sourceSet sourceSets.client
-            }
-        }
+        mods.create(project.name, {
+            sourceSet sourceSets.main
+            sourceSet sourceSets.client
+        })
     }
 
     processResources {
         inputs.property "version", project.version
 
         filesMatching("fabric.mod.json") {
-            expand "id": "${rootProject.name}-${project.name}", "version": project.version
+            expand "id": project.name, "version": project.version
         }
     }
 
@@ -43,9 +39,7 @@ subprojects {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-}
 
-allprojects {
     repositories {
         mavenLocal()
     }
@@ -56,15 +50,14 @@ allprojects {
         modImplementation "net.fabricmc:fabric-loader:0.15.0"
         modImplementation "net.fabricmc.fabric-api:fabric-api:0.91.1+1.20.4"
     }
-}
 
-loom {
-    splitEnvironmentSourceSets()
+    publishing {
+        publications {
+            create(project.name, MavenPublication, {
+                artifactId project.name
 
-    mods {
-        "fountain" {
-            sourceSet sourceSets.main
-            sourceSet sourceSets.client
+                from components.java
+            })
         }
     }
 }
@@ -80,7 +73,7 @@ processResources {
 dependencies {
     afterEvaluate {
         subprojects.each {
-            implementation project(path: it.path, configuration: 'namedElements')
+            api project(path: it.path, configuration: 'namedElements')
         }
     }
 }
@@ -94,16 +87,6 @@ remapJar {
 }
 
 publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId 'micheal65536.fountain.fabric'
-            artifactId 'fountain'
-            version project.version
-
-            from components.java
-        }
-    }
-
     // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
         // Add repositories to publish to here.
