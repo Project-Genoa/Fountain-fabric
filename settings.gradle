@@ -13,7 +13,6 @@ rootProject.name = "fountain"
 
 include 'core'
 include 'generator'
-include 'connector'
 include 'content'
 
 rootProject.children.forEach {
